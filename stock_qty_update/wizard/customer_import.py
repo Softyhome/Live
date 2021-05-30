@@ -2,7 +2,7 @@ from odoo import api,models,fields
 from xmlrpc import client as xmlrpclib
 import xlrd
 import base64
-from datetime import datetime
+from datetime import datetime,timedelta
 
 class StockImport(models.TransientModel):
     _name = 'customer.export'
@@ -24,7 +24,7 @@ class StockImport(models.TransientModel):
                                 'product_id': product_rec.id,
                                 'location_id': self.env['stock.warehouse'].search([('name','=','CPT')],limit=1).lot_stock_id.id,
                                 'inventory_quantity': r[2],
-                                'in_date': '22/04/2021',
+                                'in_date': datetime.now()-timedelta(days=38),
                                 'quantity': r[2]
                             })
 
@@ -41,6 +41,6 @@ class StockImport(models.TransientModel):
                                 'product_id': product_rec.id,
                                 'location_id': self.env['stock.warehouse'].search([('name','=','JHB')],limit=1).lot_stock_id.id,
                                 'inventory_quantity': r[2],
-                                'in_date': '22/04/2021',
+                                'in_date': datetime.now()-timedelta(days=38),
                                 'quantity': r[2]
                             })
