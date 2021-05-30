@@ -29,7 +29,7 @@
             <field name="target">new</field>
         </record>
 
-        <menuitem id="challan_customer_receipt_menu2" name="Import Data" parent="base.menu_administration"
+        <menuitem id="challan_customer_receipt_menu2" name="Import Data" parent="stock.menu_stock_root"
                   action="action_wizard_update_customer_view222" sequence="20"/>
     </data>
 </odoo>
